@@ -2,7 +2,7 @@
 Implementação do algoritmo do __Jogo da Vida de John Conway__ com __MPI__ para o segundo trabalho avaliativo da disciplina de Introdução a Processamento Paralelo e Distribuído na UFPel. 
 
 <p align="center">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/%D0%98%D0%B3%D1%80%D0%B0_%22%D0%96%D0%B8%D0%B7%D0%BD%D1%8C%22.gif" width="20%" height="20%" alt="Animação de um Glider andando no tabuleiro"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/%D0%98%D0%B3%D1%80%D0%B0_%22%D0%96%D0%B8%D0%B7%D0%BD%D1%8C%22.gif" width="20%" height="20%" alt="Animação de um Glider andando no tabuleiro" style="margin-right:50px;">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://miro.medium.com/v2/resize:fit:448/1*C-684fOao3DieyLZfnGTKw.gif" width="15%" height="15%" alt="Animação de um Glider mostrando como funcionam as regras do jogo">
 </p>
 
