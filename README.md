@@ -2,13 +2,14 @@
 Implementação do algoritmo do __Jogo da Vida de John Conway__ com __MPI__ para o segundo trabalho avaliativo da disciplina de Introdução a Processamento Paralelo e Distribuído na UFPel. 
 
 <p align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/%D0%98%D0%B3%D1%80%D0%B0_%22%D0%96%D0%B8%D0%B7%D0%BD%D1%8C%22.gif/220px-%D0%98%D0%B3%D1%80%D0%B0_%22%D0%96%D0%B8%D0%B7%D0%BD%D1%8C%22.gif" >
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/%D0%98%D0%B3%D1%80%D0%B0_%22%D0%96%D0%B8%D0%B7%D0%BD%D1%8C%22.gif" >
+Créditos da imagem: Lev Kalmykov, via [Wikipedia](https://en.wikipedia.org/wiki/File:%D0%98%D0%B3%D1%80%D0%B0_%22%D0%96%D0%B8%D0%B7%D0%BD%D1%8C%22.gif)
 </p>
 <p align="center">
 <img src="https://miro.medium.com/v2/resize:fit:448/1*C-684fOao3DieyLZfnGTKw.gif" >
 </p>
 
-# 🔍 🚩 ❗
+## 🔍 🚩 ❗
 * valores default ou não
 * estado inicial
 * verde ou não
