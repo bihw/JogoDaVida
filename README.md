@@ -1,5 +1,14 @@
 # Jogo Da Vida
 Implementação do algoritmo do __Jogo da Vida de John Conway__ com __MPI__ para o segundo trabalho avaliativo da disciplina de Introdução a Processamento Paralelo e Distribuído na UFPel. 
+
+<p align="center">
+<img src="https://github.com/bihw/JogoDaVida/assets/76601652/0926009c-7deb-49a5-8a64-2f41fe659a9d)" >
+</p>
+<p align="center">
+<img src="https://github.com/bihw/JogoDaVida/assets/76601652/c6838870-34d0-4bbd-ba0d-9c2a5a5f15fb" >
+</p>
+
+# 
 * valores default ou não
 * estado inicial
 * verde ou não
@@ -10,9 +19,7 @@ Implementação do algoritmo do __Jogo da Vida de John Conway__ com __MPI__ para
 ```
 
 ## ✔️ Saída
-<p align="center">
-<img src="https://github.com/bihw/EditorDeCenaCG/assets/76601652/896f8479-809c-4175-8779-7bd6a714608c" width="45%" height="40%" >
-</p>
+
 
 ## ✅ To do
 * ✔️ Implementar o algoritmo do Jogo da Vida. Este jogo possui um tabuleiro representado por uma matriz NxN. Cada posição da matriz representa uma célula. As células podem estar vivas, representado pelo valor 1 (um), ou mortas, valor 0 (zero). O estado de uma célula é calculado a cada passo: a cada passo todas as células são visitadas.  Uma célula viva continua viva no próximo passo se ela tem 2 ou 3 vizinhos vivos. Caso contrário, ela morre de solidão ou superpopulação. Uma célula morta se torna viva na próxima geração se ela tem exatamente 3 vizinhos vivos.
