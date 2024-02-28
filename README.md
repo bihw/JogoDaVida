@@ -29,8 +29,8 @@ mpirun -np <numero_de_processos> jogodavida <numero_de_geracoes>
 ## ✔️ Saída
 
 <p align="center">
-      <img src="https://github.com/bihw/JogoDaVida/assets/76601652/ceca7a9f-0578-4336-8b17-97357bb75862" width="20%" height="20%">
-      <br><br><img src="https://github.com/bihw/JogoDaVida/assets/76601652/50f70370-ee6d-4c6c-9005-1a5dd91da7fe" width="20%" height="20%">
+      <img src="https://github.com/bihw/JogoDaVida/assets/76601652/b9732cb7-a39b-4b68-8344-5289ad765070" width="50%" height="50%">
+      <br><br><img src="https://github.com/bihw/JogoDaVida/assets/76601652/ce608734-32fe-4364-85ba-a1b5361afa0f" width="50%" height="50%">
 </p>
 
 ## ✅ To Do
