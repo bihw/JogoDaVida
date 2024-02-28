@@ -8,15 +8,36 @@ Implementação do algoritmo do __Jogo da Vida de John Conway__ com __MPI__ para
       <br>Regras sendo aplicadas em um Glider. Créditos: Felipe Lodur, via <a href="https://medium.com/@lodur/swarm-intelligence-o-que-%C3%A9-64a0323356e2">Medium</a>
 </p>
 
-## 🔍 🚩 ❗
-* assert
-* gens default ou não
-* estado inicial
+## 🚩 Atenção
+* O número de processos deve ser divisível pela dimensão do tabuleiro.
+* O número de gerações default é 200, mas você pode ajustá-lo pela linha de comando.
+* A dimensão do tabuleiro está definida para 12, para alterá-la altere direto no código na macro "N".
+* O estado inicial do tabuleiro é gerado "aleatoriamente", mas deixei comentado um tabuleiro inicial com dois gliders (planadores). Com esses gliders, pode-se observar melhor que a movimentação funciona corretamente.
 
 ## 🛠️ Compilando e executando
+Em um Linux com MPI instalado:
 ```
-
+make
+mpirun -np <numero_de_processos> jogodavida 
+```
+Ou:
+```
+make
+mpirun -np <numero_de_processos> jogodavida <numero_de_geracoes>
 ```
 
 ## ✔️ Saída
 
+<p align="center">
+      <img src="https://github.com/bihw/JogoDaVida/assets/76601652/ceca7a9f-0578-4336-8b17-97357bb75862" width="20%" height="20%">
+      <br><br><img src="https://github.com/bihw/JogoDaVida/assets/76601652/50f70370-ee6d-4c6c-9005-1a5dd91da7fe" width="20%" height="20%">
+</p>
+
+## ✅ To Do
+Implementar o algoritmo do Jogo da Vida. Este jogo possui um tabuleiro representado por uma matriz NxN. Cada posição da matriz representa uma célula. As células podem estar vivas, representado pelo valor 1 (um), ou mortas, valor 0 (zero). O estado de uma célula é calculado a cada passo: a cada passo todas as células são visitadas.  Uma célula viva continua viva no próximo passo se ela tem 2 ou 3 vizinhos vivos. Caso contrário, ela morre de solidão ou superpopulação. Uma célula morta se torna viva na próxima geração se ela tem exatamente 3 vizinhos vivos.
+
+O programa deve realizar o seguinte algoritmo básico: 
+ * ✔️ Nó rank 0: reparte a configuração inicial da matriz entre os todos os nós (cada nó tem uma parte do terreno)
+ * ✔️ Cada nó, inclusive o mestre, evolui as células no seu terreno
+ * ✔️ Todos os nós enviam par ao mestre o resultado do cálculo de cada geração
+ * ✔️ O nó mestre apresenta (de forma gráfica ou simples caracteres ASCII) a evolução das gerações de células
