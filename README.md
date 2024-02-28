@@ -16,8 +16,14 @@ Implementação do algoritmo do __Jogo da Vida de John Conway__ com __MPI__ para
 
 ## 🛠️ Compilando e executando
 Em um Linux com MPI instalado:
-* Para compilar: ```make```
-* Ou: ``` mpicc -o jogodavida jogodavida.c ```
+* Para compilar:
+```
+make
+```
+* Ou:
+```
+mpicc -o jogodavida jogodavida.c
+```
 * Para executar: 
 ```
 mpirun -np <numero_de_processos> jogodavida 
