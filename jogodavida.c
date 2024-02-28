@@ -4,11 +4,9 @@
 #include <string.h>
 #include <time.h>
 
-#define GEN_DEF 30  // número de gerações default
+#define GEN_DEF 200  // número de gerações default
 #define N 12    // dimensão do tabuleiro 
 #define CELLS N*N   // número de células do tabuleiro 
-#define ANSI_COLOR_GREEN "\e[0;32m"
-#define ANSI_COLOR_RESET "\x1b[0m"
 
 void printTabuleiro(int tabuleiro[CELLS]);
 
@@ -45,14 +43,14 @@ int main(int argc, char **argv){
 
     // INICIANDO TABULEIRO:
     
-    /*// Para valores "aleatórios":
+    // Para valores "aleatórios":
     int tabuleiro[CELLS];
     srand(time(NULL)); 
-    for (int i = 0; i < N; i++){
+    for (int i = 0; i < CELLS; i++){
         tabuleiro[i] = rand() % 2; // inicializa a matriz com valores "aleatórios" 0 ou 1
-    }*/
+    }
     
-    // Para dois planadores/gliders
+    /* // Para dois planadores/gliders
     int tabuleiro[CELLS] = {
         1,0,1,0,0,0,0,0,0,0,0,0,
         0,1,1,0,0,0,0,0,0,0,0,0,
@@ -66,12 +64,16 @@ int main(int argc, char **argv){
         0,0,0,0,0,0,0,0,0,0,0,0,
         0,0,0,0,0,0,0,0,0,0,0,0,
         0,0,0,0,0,0,0,0,0,0,0,0
-    };
+    }; */
 
     if (rank == 0){
        printf("Estado inicial: ");
        printTabuleiro(tabuleiro);
     }
+
+    clock_t t_inicio, t_fim, t_ignorarI, t_ignorarF;
+    double tempo_execucao, t_ignorado, tempo_execucao_total;
+    t_inicio = clock();
 
     int rowsPerProcess = N / size;
 
@@ -161,15 +163,31 @@ int main(int argc, char **argv){
 
         MPI_Gather(nextGen, N * rowsPerProcess, MPI_INT, &tabuleiro, N * rowsPerProcess, MPI_INT, 0, MPI_COMM_WORLD);
 
+        t_ignorarI = clock();
+
         if (rank == 0){
             printf("\nGeracao %d: ", ger+1);
             printTabuleiro(tabuleiro);
         }
 
+        t_ignorarF = clock();
+
         free(nextGen);
     }
 
     free(tabLocal);
+
+    t_fim = clock();
+    t_ignorado = ((double)(t_ignorarF - t_ignorarI)) / CLOCKS_PER_SEC;
+    tempo_execucao = ((double)(t_fim - t_inicio)) / CLOCKS_PER_SEC;
+    tempo_execucao = (tempo_execucao - t_ignorado)*1000.0;
+
+    MPI_Reduce(&tempo_execucao, &tempo_execucao_total, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+
+    if (rank == 0) {
+        printf("\nTempo total: %.3fms\n\n", tempo_execucao_total);
+    }
+
     MPI_Finalize(); 
 
     return 0;
@@ -179,14 +197,7 @@ void printTabuleiro(int tabuleiro[CELLS]){
     for (int i = 0; i < CELLS; i++){
         if (i % N == 0) 
             printf("\n");
-
         printf("%d ", tabuleiro[i]);
-        
-        /* // para escrever as células vivas em verde (terminal)
-        if (tabuleiro[i] == 1)
-            printf(ANSI_COLOR_GREEN "1 " ANSI_COLOR_RESET);
-        else
-            printf("0 "); */
     }
     printf("\n");
 }
