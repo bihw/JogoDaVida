@@ -34,10 +34,11 @@ mpirun -np <numero_de_processos> jogodavida <numero_de_geracoes>
 ```
 
 ## ✔️ Saída
+Saída dos Gliders:
 
 <p align="center">
-      <img src="https://github.com/bihw/JogoDaVida/assets/76601652/f5af3d82-4e25-473d-b8c5-60e1d98458a3" width="30%" height="30%"> &nbsp&nbsp&nbsp&nbsp&nbsp
-      <img src="https://github.com/bihw/JogoDaVida/assets/76601652/ce608734-32fe-4364-85ba-a1b5361afa0f" width="30%" height="30%">
+      <img src="https://github.com/bihw/JogoDaVida/assets/76601652/4d14466b-e4e5-4d01-b37e-14e3e58345e8" width="30%" height="30%"> &nbsp&nbsp&nbsp&nbsp&nbsp
+      <img src="https://github.com/bihw/JogoDaVida/assets/76601652/64a828d4-0f9e-4353-8a20-9fc820b733e6" width="30%" height="30%">
 </p>
 
 ## ✅ To Do
