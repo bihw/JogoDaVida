@@ -71,10 +71,6 @@ int main(int argc, char **argv){
        printTabuleiro(tabuleiro);
     }
 
-    clock_t t_inicio, t_fim, t_ignorarI, t_ignorarF;
-    double tempo_execucao, t_ignorado, tempo_execucao_total;
-    t_inicio = clock();
-
     int rowsPerProcess = N / size;
 
     int * tabLocal = (int *)malloc((rowsPerProcess + 2) * N * sizeof(int));
@@ -163,30 +159,15 @@ int main(int argc, char **argv){
 
         MPI_Gather(nextGen, N * rowsPerProcess, MPI_INT, &tabuleiro, N * rowsPerProcess, MPI_INT, 0, MPI_COMM_WORLD);
 
-        t_ignorarI = clock();
-
         if (rank == 0){
             printf("\nGeracao %d: ", ger+1);
             printTabuleiro(tabuleiro);
         }
 
-        t_ignorarF = clock();
-
         free(nextGen);
     }
 
     free(tabLocal);
-
-    t_fim = clock();
-    t_ignorado = ((double)(t_ignorarF - t_ignorarI)) / CLOCKS_PER_SEC;
-    tempo_execucao = ((double)(t_fim - t_inicio)) / CLOCKS_PER_SEC;
-    tempo_execucao = (tempo_execucao - t_ignorado)*1000.0;
-
-    MPI_Reduce(&tempo_execucao, &tempo_execucao_total, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-
-    if (rank == 0) {
-        printf("\nTempo total: %.3fms\n\n", tempo_execucao_total);
-    }
 
     MPI_Finalize(); 
 
