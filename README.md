@@ -1,5 +1,5 @@
 # Conway's Game of Life
-Implementação do algoritmo d __Jogo da vida de Conway__ com __MPI__ para o segundo trabalho avaliativo da disciplina de Introdução a Processamento Paralelo e Distribuído na UFPel. O jogo da vida é um __autômato celular__ desenvolvido pelo matemático britânico __John Horton Conway__ em 1970.
+Implementação do algoritmo do __Jogo da vida de Conway__ com __MPI__ para o segundo trabalho avaliativo da disciplina de Introdução a Processamento Paralelo e Distribuído na UFPel. O jogo da vida é um __autômato celular__ desenvolvido pelo matemático britânico __John Horton Conway__ em 1970.
 
 <p align="center">
       <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/%D0%98%D0%B3%D1%80%D0%B0_%22%D0%96%D0%B8%D0%B7%D0%BD%D1%8C%22.gif" width="20%" height="20%">
